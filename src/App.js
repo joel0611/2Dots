@@ -3,16 +3,19 @@ import { useRef } from "react";
 import "./App.css";
 
 function App() {
-  console.log("starts rendering");
-
   const itemInput = useRef(null);
   const [itemList, addItem] = useState([]);
 
-  console.log(itemList);
-
   const addItemButtonAction = () => {
     const item = itemInput.current.value;
+    itemInput.current.value = "";
     addItem(itemList.concat(item));
+  };
+
+  // when the confirm button is pressed
+  // the list is stored into an array named finalized list
+  const confirmButtonAction = () => {
+    const finalizedList = itemList;
   };
 
   return (
@@ -24,14 +27,21 @@ function App() {
         <button type="button" onClick={addItemButtonAction}>
           Add item
         </button>
-        <button type="button">Confirm</button>
+        <button type="button" onClick={confirmButtonAction}>
+          Confirm
+        </button>
       </form>
     </div>
   );
 }
 
 const DisplayItems = ({ items }) => {
-  return <>{items}</>;
+  const shoppingList = items.map((item) => <li>{item}</li>);
+  return (
+    <>
+      <ul>{shoppingList}</ul>
+    </>
+  );
 };
 
 export default App;
