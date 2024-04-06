@@ -17,7 +17,7 @@ function App() {
   // the list is stored into an array named finalized list
   const confirmButtonAction = () => {
     const finalizedList = itemList;
-    SortedShoppingList()
+    SortedShoppingList();
   };
 
   return (
@@ -25,16 +25,18 @@ function App() {
       <Header />
       <div>
         <DisplayItems items={itemList} />
-        <form>
-          <label htmlFor="item-input"></label>
-          <input type="text" ref={itemInput} name="item-input"></input>
-          <button type="button" onClick={addItemButtonAction}>
-            Add item
-          </button>
-          <button type="button" onClick={confirmButtonAction}>
-            Confirm
-          </button>
-        </form>
+        <fieldset>
+          <form>
+            <label htmlFor="item-input"></label>
+            <input type="text" ref={itemInput} name="item-input"></input>
+            <button type="button" onClick={addItemButtonAction}>
+              Add item
+            </button>
+            <button type="button" onClick={confirmButtonAction}>
+              Confirm
+            </button>
+          </form>
+        </fieldset>
       </div>
     </>
   );
