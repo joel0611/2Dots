@@ -23,11 +23,18 @@ function App() {
   return (
     <>
       <Header />
+<<<<<<< HEAD
       <div className="customer-section">
         <h1>Customer section</h1>
         <div className="shopping-list">
           <DisplayItems items={itemList} />
           <form className="form">
+=======
+      <div>
+        <DisplayItems items={itemList} />
+        <fieldset>
+          <form>
+>>>>>>> f6f9ad3c8425c7ba1c8add0ad96e5b703fd399e3
             <label htmlFor="item-input"></label>
             <input type="text" ref={itemInput} name="item-input"></input>
             <button type="button" onClick={addItemButtonAction}>
@@ -37,7 +44,11 @@ function App() {
               Confirm
             </button>
           </form>
+<<<<<<< HEAD
         </div>
+=======
+        </fieldset>
+>>>>>>> f6f9ad3c8425c7ba1c8add0ad96e5b703fd399e3
       </div>
     </>
   );
