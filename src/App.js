@@ -17,24 +17,27 @@ function App() {
   // the list is stored into an array named finalized list
   const confirmButtonAction = () => {
     const finalizedList = itemList;
-    SortedShoppingList()
+    SortedShoppingList();
   };
 
   return (
     <>
       <Header />
-      <div>
-        <DisplayItems items={itemList} />
-        <form>
-          <label htmlFor="item-input"></label>
-          <input type="text" ref={itemInput} name="item-input"></input>
-          <button type="button" onClick={addItemButtonAction}>
-            Add item
-          </button>
-          <button type="button" onClick={confirmButtonAction}>
-            Confirm
-          </button>
-        </form>
+      <div className="customer-section">
+        <h1>Customer section</h1>
+        <div className="shopping-list">
+          <DisplayItems items={itemList} />
+          <form className="form">
+            <label htmlFor="item-input"></label>
+            <input type="text" ref={itemInput} name="item-input"></input>
+            <button type="button" onClick={addItemButtonAction}>
+              Add item
+            </button>
+            <button type="button" onClick={confirmButtonAction}>
+              Confirm
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );
@@ -42,10 +45,9 @@ function App() {
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <h1>Two Dots</h1>
       <button>Login for shopowners</button>
-      <h1>For customers</h1>
     </div>
   );
 };
@@ -61,9 +63,9 @@ const DisplayItems = ({ items }) => {
 
   const shoppingList = items.map((item) => <li>{item}</li>);
   return (
-    <>
+    <div className="shopping-list">
       <ul>{shoppingList}</ul>
-    </>
+    </div>
   );
 };
 
